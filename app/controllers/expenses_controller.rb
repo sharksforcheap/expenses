@@ -30,5 +30,6 @@ class ExpensesController < ApplicationController
     @users = User.all
     @expense.users = User.find(params[:user_ids]) if params[:user_ids]
     @expense.save
+    redirect_to new_expense_path
   end
 end

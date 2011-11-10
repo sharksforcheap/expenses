@@ -1,8 +1,7 @@
 <nav class="navbar round">
   <ul>
     <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Sign up", signup_path %></li>
-    <li><%= link_to "Sign in", signin_path %></li>
-    <li><%= link_to "Expenses", new_expense_path %></li>
+    <li><%= link_to "Expenses", root_path %></li>
+    <li><%= link_to "New Expense", new_expense_path%></li>
   </ul>
 </nav>
