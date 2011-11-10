@@ -1,0 +1,38 @@
+<h1> Add an expense </h1>
+
+<%= form_for(@expense) do |f| %>
+  <div class="field">
+    <%= f.label :name_of_expense %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <%= 
+    f.select( 
+      :user_id,  
+      options_for_select(
+        User.find(:all).map { |user| 
+         [user.name, user.id] 
+        }, 
+        @expense.payer 
+      ) 
+    )
+  %>
+
+  <div class="field">
+    <%= f.label :cost %><br/>
+    <%= f.number_field :cost%>
+  </div>
+  <div>
+    <%= select_tag("user_ids[]", options_for_select(User.find(:all).collect { |user| [user.name, user.id] }, @expense.users.collect { |user| user.id}), {:multiple=>true})%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit Expense" %>
+  </div>
+<% end %>
+
+
+<div>
+  <h3>Currently, this is the state of debt:</h3>
+  <% @users.each do |user| %>
+    <p> <%= user.name %> paid: <%= user.net %> </p>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenses</title>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="contentContainer round">
+<%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>create page</h1>
+
+<p>
+<%= @expense.cost %>
+</p>
+<p>
+<% @users.each do |beneficiary| %>
+  hello
+
+<% end %>
+  <%= params %>
+
+<%= @expense.users %>
+
+</p>
+
+
